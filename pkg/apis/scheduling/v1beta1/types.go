@@ -206,6 +206,11 @@ type PodGroupStatus struct {
 	// Current phase of PodGroup.
 	Phase PodGroupPhase `json:"phase,omitempty" protobuf:"bytes,1,opt,name=phase"`
 
+	// A brief CamelCase message indicating details about why the pg is in this state.
+	// e.g. 'Evicted'
+	// +optional
+	Reason string `json:"reason,omitempty" protobuf:"bytes,,opt,name=reason"`
+
 	// The conditions of PodGroup.
 	// +optional
 	Conditions []PodGroupCondition `json:"conditions,omitempty" protobuf:"bytes,2,opt,name=conditions"`

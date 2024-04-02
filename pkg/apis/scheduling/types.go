@@ -198,6 +198,11 @@ type PodGroupStatus struct {
 	// Current phase of PodGroup.
 	Phase PodGroupPhase
 
+	// A brief CamelCase message indicating details about why the pg is in this state.
+	// e.g. 'Evicted'
+	// +optional
+	Reason string
+
 	// The conditions of PodGroup.
 	// +optional
 	Conditions []PodGroupCondition
