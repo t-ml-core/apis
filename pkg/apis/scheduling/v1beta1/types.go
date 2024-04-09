@@ -211,6 +211,8 @@ const (
 	NodeFitError Reason = "NodeFitError"
 	// Internal error occurred, for instance, a request to kubeapi returned an error
 	InternalError Reason = "InternalError"
+	// Pg hasn't been handled
+	JobCreated Reason = "JobCreated"
 )
 
 // PendingReason describes why a podgroup is in Pending state
