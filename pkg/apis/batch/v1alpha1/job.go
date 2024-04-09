@@ -247,15 +247,48 @@ const (
 	Failed JobPhase = "Failed"
 )
 
+// Reason is an enum that represent possible pending reason
+type Reason string
+
+const (
+	// Can't find enough resources for pg tasks
+	NotEnoughResourcesInCluster Reason = "NotEnoughResourcesInCluster"
+	// Find node, but the node returned an error
+	NodeFitError Reason = "NodeFitError"
+	// Internal error occurred, for instance, a request to kubeapi returned an error
+	InternalError Reason = "InternalError"
+	// Pg hasn't been handled
+	JobCreated Reason = "JobCreated"
+)
+
+// PendingReason describes why a podgroup is in Pending state
+type PendingReason struct {
+	// Name of the action that rejected the pg
+	// +optional
+	Action string `json:"action,omitempty" protobuf:"bytes,1,opt,name=action"`
+
+	// Name of the plugin that rejected the pg
+	// +optional
+	Plugin string `json:"plugin,omitempty" protobuf:"bytes,2,opt,name=plugin"`
+
+	// Reason why plugin/action decided to reject the pg
+	Reason Reason `json:"reason,omitempty" protobuf:"bytes,3,opt,name=reason"`
+
+	// Human readable message with detailed description why this Reason was set
+	// +optional
+	Message string `json:"message,omitempty" protobuf:"bytes,4,opt,name=message"`
+}
+
 // JobState contains details for the current state of the job.
 type JobState struct {
 	// The phase of Job.
 	// +optional
 	Phase JobPhase `json:"phase,omitempty" protobuf:"bytes,1,opt,name=phase"`
 
-	// Unique, one-word, CamelCase reason for the phase's last transition.
+	// The reason why pod is in the pending state
+	// Presents if the pod is in the pending state
 	// +optional
-	Reason string `json:"reason,omitempty" protobuf:"bytes,2,opt,name=reason"`
+	PendingReason PendingReason `json:"reason,omitempty" protobuf:"bytes,2,opt,name=reason"`
 
 	// Human-readable message indicating details about last transition.
 	// +optional
