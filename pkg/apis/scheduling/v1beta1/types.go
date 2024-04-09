@@ -201,15 +201,45 @@ type PodGroupSpec struct {
 	MinResources *v1.ResourceList `json:"minResources,omitempty" protobuf:"bytes,4,opt,name=minResources"`
 }
 
+// Reason is an enum that represent possible pending reason
+type Reason string
+
+const (
+	// Can't find enough resources for pg tasks
+	NotEnoughResourcesInCluster Reason = "NotEnoughResourcesInCluster"
+	// Find node, but the node returned an error
+	NodeFitError Reason = "NodeFitError"
+	// Internal error occurred, for instance, a request to kubeapi returned an error
+	InternalError Reason = "InternalError"
+)
+
+// PendingReason describes why a podgroup is in Pending state
+type PendingReason struct {
+	// Name of the action that rejected the pg
+	// +optional
+	Action string `json:"action,omitempty" protobuf:"bytes,1,opt,name=action"`
+
+	// Name of the plugin that rejected the pg
+	// +optional
+	Plugin string `json:"plugin,omitempty" protobuf:"bytes,2,opt,name=plugin"`
+
+	// Reason why plugin/action decided to reject the pg
+	Reason Reason `json:"reason,omitempty" protobuf:"bytes,3,opt,name=reason"`
+
+	// Human readable message with detailed description why this Reason was set
+	// +optional
+	Message string `json:"message,omitempty" protobuf:"bytes,4,opt,name=message"`
+}
+
 // PodGroupStatus represents the current state of a pod group.
 type PodGroupStatus struct {
 	// Current phase of PodGroup.
 	Phase PodGroupPhase `json:"phase,omitempty" protobuf:"bytes,1,opt,name=phase"`
 
-	// A brief CamelCase message indicating details about why the pg is in this state.
-	// e.g. 'Evicted'
+	// The reason why pod is in the pending state
+	// Presents if the pod is in the pending state
 	// +optional
-	Reason string `json:"reason,omitempty" protobuf:"bytes,,opt,name=reason"`
+	PendingReason PendingReason `json:"reason,omitempty" protobuf:"bytes,6,opt,name=reason"`
 
 	// The conditions of PodGroup.
 	// +optional
