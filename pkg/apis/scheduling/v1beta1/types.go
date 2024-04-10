@@ -241,7 +241,7 @@ type PodGroupStatus struct {
 	// The reason why pod is in the pending state
 	// Presents if the pod is in the pending state
 	// +optional
-	PendingReason PendingReason `json:"reason,omitempty" protobuf:"bytes,6,opt,name=reason"`
+	PendingReason PendingReason `json:"pendingReason,omitempty" protobuf:"bytes,6,opt,name=pendingReason"`
 
 	// The conditions of PodGroup.
 	// +optional
