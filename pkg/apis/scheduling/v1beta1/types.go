@@ -213,6 +213,8 @@ const (
 	InternalError Reason = "InternalError"
 	// Pg hasn't been handled
 	JobCreated Reason = "JobCreated"
+	// Job was preempted by another job
+	JobPreempted Reason = "JobPreempted"
 )
 
 // PendingReason describes why a podgroup is in Pending state
