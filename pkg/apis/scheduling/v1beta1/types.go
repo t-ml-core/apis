@@ -215,6 +215,8 @@ const (
 	NotProcessedByScheduler PendingReason = "NotProcessedByScheduler"
 	// Job was preempted by another job
 	JobPreempted PendingReason = "JobPreempted"
+	// Cannot enqueue job because of the upper limit of resources in the quota
+	NotEnoughResourcesInQuota PendingReason = "NoResourcesInTheQuota"
 )
 
 // PendingReasonInfo describes why a podgroup is in Pending state

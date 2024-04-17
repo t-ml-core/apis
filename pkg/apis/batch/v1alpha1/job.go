@@ -257,8 +257,12 @@ const (
 	NodeFitError PendingReason = "NodeFitError"
 	// Internal error occurred, for instance, a request to kubeapi returned an error
 	InternalError PendingReason = "InternalError"
-	// Pg hasn't been handled
-	JobCreated PendingReason = "JobCreated"
+	// Pg was created by the controller, but hasn't been processed by the scheduler yet
+	NotProcessedByScheduler PendingReason = "NotProcessedByScheduler"
+	// Job was preempted by another job
+	JobPreempted PendingReason = "JobPreempted"
+	// Cannot enqueue job because of the upper limit of resources in the quota
+	NotEnoughResourcesInQuota PendingReason = "NoResourcesInTheQuota"
 )
 
 // PendingReasonInfo describes why a podgroup is in Pending state
