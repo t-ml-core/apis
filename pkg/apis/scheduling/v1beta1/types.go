@@ -211,6 +211,8 @@ const (
 	InternalError PendingReason = "InternalError"
 	// Pg was created by the controller, but hasn't been processed by the scheduler yet
 	NotProcessedByScheduler PendingReason = "NotProcessedByScheduler"
+	// Job was submitted to the cluster, but haven't yet processed by volcano controller
+	NotProcessedByController PendingReason = "NotProcessedByController"
 	// Job was preempted by another job
 	JobPreempted PendingReason = "JobPreempted"
 	// Cannot enqueue job because of the upper limit of resources in the quota
