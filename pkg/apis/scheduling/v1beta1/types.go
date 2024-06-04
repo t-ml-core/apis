@@ -233,6 +233,10 @@ type PendingReasonInfo struct {
 	// Human readable message with detailed description why this Reason was set
 	// +optional
 	Message string `json:"message,omitempty" protobuf:"bytes,4,opt,name=message"`
+
+	// Time when the pending reason have been updated
+	// +optional
+	LastTransitionTime metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,5,opt,name=lastTransitionTime"`
 }
 
 // PodGroupStatus represents the current state of a pod group.
