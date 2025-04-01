@@ -19,6 +19,7 @@ package v1alpha1
 import (
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"time"
 	"volcano.sh/apis/pkg/apis/bus/v1alpha1"
 )
 
@@ -288,7 +289,7 @@ type PendingReasonInfo struct {
 
 	// Time when the pending reason have been updated
 	// +optional
-	LastTransitionTime metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,5,opt,name=lastTransitionTime"`
+	LastTransitionTime time.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,5,opt,name=lastTransitionTime"`
 }
 
 // JobState contains details for the current state of the job.
