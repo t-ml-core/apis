@@ -16,6 +16,7 @@ package scheduling
 import (
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"time"
 )
 
 // PodGroupPhase is the phase of a pod group at the current time.
@@ -234,7 +235,7 @@ type PendingReasonInfo struct {
 
 	// Time when the pending reason have been updated
 	// +optional
-	LastTransitionTime metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,5,opt,name=lastTransitionTime"`
+	LastTransitionTime time.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,5,opt,name=lastTransitionTime"`
 }
 
 // PodGroupStatus represents the current state of a pod group.
