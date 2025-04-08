@@ -68,5 +68,5 @@ const TopologyDecisionAnnotation = "volcano.sh/topology-decision"
 // PodQosLevel is the key of pod qos level
 const PodQosLevel = "volcano.sh/qos-level"
 
-// EnableInQuotasAnnotation is the key of enable in quotas plugin, true or false
-const EnableInQuotasAnnotation = "volcano.sh/enable-in-quotas-plugin"
+// EnableInQuotasAnnotationKey is the key of enable in quotas plugin, true or false
+const EnableInQuotasAnnotationKey = "volcano.sh/enable-in-quotas-plugin"
