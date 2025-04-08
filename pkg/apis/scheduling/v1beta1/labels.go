@@ -50,7 +50,7 @@ const PodPreemptable = "volcano.sh/preemptable"
 // Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
 const CooldownTime = "volcano.sh/cooldown-time"
 
-//RevocableZone is the key of revocable-zone
+// RevocableZone is the key of revocable-zone
 const RevocableZone = "volcano.sh/revocable-zone"
 
 // JDBMinAvailable is the key of min available pod number
@@ -67,3 +67,6 @@ const TopologyDecisionAnnotation = "volcano.sh/topology-decision"
 
 // PodQosLevel is the key of pod qos level
 const PodQosLevel = "volcano.sh/qos-level"
+
+// EnableInQuotasAnnotation is the key of enable in quotas plugin, true or false
+const EnableInQuotasAnnotation = "volcano.sh/enable-in-quotas-plugin"
