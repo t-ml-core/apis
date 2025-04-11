@@ -222,6 +222,8 @@ const (
 	InsufficientQuota PendingReason = "InsufficientQuota"
 	// Freeing up resources in the cluster (for example: preempting jobs)
 	FreeingUpResourcesInTheCluster PendingReason = "FreeingUpResourcesInTheCluster"
+	// Can't find available node for job
+	NoAvailableNodesFound PendingReason = "NoAvailableNodesFound"
 )
 
 // PendingReasonInfo describes why a podgroup is in Pending state
