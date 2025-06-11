@@ -70,3 +70,11 @@ const PodQosLevel = "volcano.sh/qos-level"
 
 // EnableInQuotasAnnotationKey is the key of enable in quotas plugin, true or false
 const EnableInQuotasAnnotationKey = "volcano.sh/enable-in-quotas-plugin"
+
+// SharedLimitsGroupKey is a key to determine queue relation to
+// shared limits group
+const SharedLimitsGroupKey = "volcano.sh/shared-limits-group-key"
+
+// IsSharedLimitsGroupLeader is true if queue's limits should be interpreted as limits
+// for all jobs in shared limits group
+const IsSharedLimitsGroupLeader = "volcano.sh/is-shared-limits-group-leader"
