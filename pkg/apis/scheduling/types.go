@@ -14,9 +14,10 @@ limitations under the License.
 package scheduling
 
 import (
+	"time"
+
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"time"
 )
 
 // PodGroupPhase is the phase of a pod group at the current time.
@@ -216,6 +217,8 @@ const (
 	FreeingUpResourcesInTheCluster PendingReason = "FreeingUpResourcesInTheCluster"
 	// Can't find available node for job
 	NoAvailableNodesFound PendingReason = "NoAvailableNodesFound"
+	// Job tries to take quota in someone else's guarantee
+	JobMayTakeOtherQueuesGuarantee PendingReason = "JobMayTakeOtherQueuesGuarantee"
 )
 
 // PendingReason describes why a podgroup is in Pending state
