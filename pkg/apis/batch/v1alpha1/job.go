@@ -17,9 +17,10 @@ limitations under the License.
 package v1alpha1
 
 import (
+	"time"
+
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"time"
 	"volcano.sh/apis/pkg/apis/bus/v1alpha1"
 )
 
@@ -270,6 +271,8 @@ const (
 	FreeingUpResourcesInTheCluster PendingReason = "FreeingUpResourcesInTheCluster"
 	// Can't find available node for job
 	NoAvailableNodesFound PendingReason = "NoAvailableNodesFound"
+	// Project tries to take quota in someone else's guarantee, but there are resources in the cluster
+	ProjectInOthersGuaranteePendingReason PendingReason = "ProjectInOthersGuaranteePending"
 )
 
 // PendingReasonInfo describes why a podgroup is in Pending state
