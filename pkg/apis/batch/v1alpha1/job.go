@@ -271,7 +271,7 @@ const (
 	FreeingUpResourcesInTheCluster PendingReason = "FreeingUpResourcesInTheCluster"
 	// Can't find available node for job
 	NoAvailableNodesFound PendingReason = "NoAvailableNodesFound"
-	// Job tries to take quota in someone else's guarantee, but there are resources in the cluster
+	// Job tries to take quota in someone else's guarantee
 	JobMayTakeOtherQueuesGuarantee PendingReason = "JobMayTakeOtherQueuesGuarantee"
 )
 
