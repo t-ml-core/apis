@@ -218,7 +218,7 @@ const (
 	// Can't find available node for job
 	NoAvailableNodesFound PendingReason = "NoAvailableNodesFound"
 	// Project tries to take quota in someone else's guarantee, but there are resources in the cluster
-	QueueMayTakeOthersGuarantee PendingReason = "QueueMayTakeOthersGuarantee"
+	JobMayTakeOtherQueuesGuarantee PendingReason = "JobMayTakeOtherQueuesGuarantee"
 )
 
 // PendingReason describes why a podgroup is in Pending state
