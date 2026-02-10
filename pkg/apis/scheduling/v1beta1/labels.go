@@ -67,3 +67,6 @@ const TopologyDecisionAnnotation = "volcano.sh/topology-decision"
 
 // PodQosLevel is the key of pod qos level
 const PodQosLevel = "volcano.sh/qos-level"
+
+// VolcanoQueueAlias is an annotation to specify the queue alias 
+const VolcanoQueueAlias = "volcano.sh/queue-alias"
