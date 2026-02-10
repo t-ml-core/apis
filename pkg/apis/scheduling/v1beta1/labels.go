@@ -81,3 +81,7 @@ const IsSharedLimitsGroupLeader = "volcano.sh/is-shared-limits-group-leader"
 
 // MinPodResourcesInQueue is an annotation to determine queue restrictions on pod resources size
 const MinPodResourcesInQueue = "volcano.sh/min-pod-resources-in-queue"
+
+// VolcanoQueueAlias is an annotation to specify the queue alias 
+const VolcanoQueueAlias = "volcano.sh/queue-alias"
+
