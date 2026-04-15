@@ -71,6 +71,9 @@ const PodQosLevel = "volcano.sh/qos-level"
 // EnableInQuotasAnnotationKey is the key of enable in quotas plugin, true or false
 const EnableInQuotasAnnotationKey = "volcano.sh/enable-in-quotas-plugin"
 
+// EnableInProportionPlugin is the key of enable in proportion plugin, true or false
+const EnableInProportionPlugin = "volcano.sh/enable-in-proportion-plugin"
+
 // SharedLimitsGroupKey is a key to determine queue relation to
 // shared limits group
 const SharedLimitsGroupKey = "volcano.sh/shared-limits-group-key"
@@ -87,3 +90,6 @@ const VolcanoQueueAlias = "volcano.sh/queue-alias"
 
 // VolcanoQueueGroupAlias is an annotation to specify the queue group alias
 const VolcanoQueueGroupAlias = "volcano.sh/queue-group-alias"
+
+// NvidiaDriverMajorLabel is the key to indicate the major version of nvidia driver
+const NvidiaDriverMajorLabel = "volcano.sh/cuda.driver.major"
