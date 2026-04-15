@@ -71,8 +71,8 @@ const PodQosLevel = "volcano.sh/qos-level"
 // EnableInQuotasAnnotationKey is the key of enable in quotas plugin, true or false
 const EnableInQuotasAnnotationKey = "volcano.sh/enable-in-quotas-plugin"
 
-// EnableInProportionPlugin is the key of enable in proportion plugin, true or false
-const EnableInProportionPlugin = "volcano.sh/enable-in-proportion-plugin"
+// DisableInProportionPluginAnnotationKey is the key of disable in proportion plugin, true or false
+const DisableInProportionPluginAnnotationKey = "volcano.sh/disable-in-proportion-plugin"
 
 // SharedLimitsGroupKey is a key to determine queue relation to
 // shared limits group
